@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喷系知名高手云集的一处净地 空想 ·强者如云</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Ma Shan Zheng", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            padding-bottom: 120px;
+            position: relative;
+            color: #f8f8f8;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 20px 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: splashFadeOut 1.5s ease-in-out forwards;
+            animation-delay: 4s;
+            pointer-events: none;
+        }
+        .splash-title {
+            font-size: clamp(2.8rem, 15vw, 6rem);
+            font-weight: 900;
+            color: #ADD8E6;
+            text-shadow: none;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            animation: softBlink 1.8s infinite ease-in-out, fadeInText 2s ease-out;
+            white-space: nowrap;
+            line-height: 1.2;
+            padding: 0 10px;
+        }
+        .splash-sub {
+            font-size: clamp(1.8rem, 6vw, 3.2rem);
+            font-weight: 600;
+            color: #B0E0E6;
+            text-shadow: none;
+            animation: softBlink 2.2s infinite ease-in-out, fadeInText 2.5s ease-out;
+            margin-bottom: 40px;
+            letter-spacing: 5px;
+        }
+        .splash-arrow {
+            font-size: 4rem;
+            color: #87CEEB;
+            text-shadow: none;
+            animation: bounceArrow 1.8s infinite, softBlink 2s infinite ease-in-out;
+            cursor: pointer;
+            pointer-events: auto;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .splash-arrow:hover {
+            transform: scale(1.3) translateY(5px);
+            color: #B0E0E6;
+        }
+        @keyframes softBlink {
+            0% { opacity: 0.9; }
+            50% { opacity: 0.4; }
+            100% { opacity: 0.9; }
+        }
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+        @keyframes splashFadeOut {
+            0% { opacity: 1; visibility: visible; }
+            80% { opacity: 0.8; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 40px 0;
+            background: linear-gradient(90deg, #111111, #222222, #333333, #444444, #555555);
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
+            background-image: linear-gradient(120deg, 
+                transparent, 
+                rgba(255,255,255,0.15), 
+                transparent);
+            animation: headerShine 4s ease-in-out infinite;
+        }
+        @keyframes headerShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .header h1 {
+            color: #ffffff;
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: 12px;
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+            background: linear-gradient(90deg, 
+                #e0e0e0 0%, 
+                #ffffff 50%, 
+                #e0e0e0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 0.5px rgba(255,255,255,0.3);
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes textGlow {
+            0% { text-shadow: 0 6px 12px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.1); }
+            100% { text-shadow: 0 6px 12px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255,255,255,0.4), 0 0 30px rgba(255,255,255,0.2); }
+        }
+        .header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 5%;
+            width: 90%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.8), 
+                transparent);
+            border-radius: 2px;
+            animation: linePulse 2s ease-in-out infinite alternate;
+        }
+        @keyframes linePulse {
+            0% { opacity: 0.7; width: 80%; }
+            100% { opacity: 1; width: 90%; }
+        }
+        .section-title {
+            text-align: center;
+            margin: 40px auto 20px auto;
+            font-size: 36px;
+            letter-spacing: 8px;
+            background: linear-gradient(90deg, #cccccc, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(135,206,235,0.8), 
+                transparent);
+            border-radius: 2px;
+        }
+        .story-player {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+        .story-btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #87CEEB;
+            border: 2px solid rgba(135,206,235,0.4);
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+        .story-btn:hover {
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            border-color: #87CEEB;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(135,206,235,0.3);
+        }
+        .story-btn:active {
+            transform: translateY(0);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .story-btn.playing {
+            background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%);
+            color: #000000;
+            border-color: #ffffff;
+        }
+        .carousel-container {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+            aspect-ratio: 860/472;
+            position: relative;
+            background: rgba(20,20,20,0.8);
+            touch-action: pan-y;
+        }
+        .carousel-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(135,206,235,0.05), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .carousel {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.5s ease;
+            z-index: 0;
+        }
+        .carousel img {
+            width: 25%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .record-carousel-container {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+            aspect-ratio: 860/472;
+            position: relative;
+            background: rgba(20,20,20,0.8);
+            touch-action: pan-y;
+        }
+        .record-carousel-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,100,100,0.05), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .record-carousel {
+            display: flex;
+            width: 700%;
+            height: 100%;
+            transition: transform 0.5s ease;
+            z-index: 0;
+        }
+        .record-carousel img {
+            width: 14.2857%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .video-card {
+            background: rgba(20, 20, 20, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .video-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+            background: rgba(30, 30, 30, 1);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .video-card h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #cccccc, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .video-card video {
+            width: 100%;
+            border-radius: 12px;
+            outline: none;
+            border: 1px solid rgba(135,206,235,0.2);
+            playsinline: true;
+            webkit-playsinline: true;
+        }
+        .member-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .member-card {
+            background: rgba(20, 20, 20, 0.95);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .member-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, rgba(255,255,255,0.05), rgba(0,0,0,0.1)),
+                linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            z-index: 0;
+        }
+        .member-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+            background: rgba(30, 30, 30, 1);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .member-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #444444;
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.6),
+                inset 0 0 0 1px rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .member-card:hover .avatar {
+            border-color: #ffffff;
+            transform: scale(1.1);
+            box-shadow: 
+                0 8px 16px rgba(255, 255, 255, 0.2),
+                inset 0 0 0 1px rgba(255,255,255,0.2);
+        }
+        .member-info {
+            position: relative;
+            z-index: 1;
+        }
+        .member-name {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #cccccc, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .contact-btn {
+            padding: 8px 16px;
+            background: rgba(30,30,30,0.7);
+            color: #87CEEB;
+            border: 1px solid rgba(135,206,235,0.4);
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .contact-btn:hover {
+            background: rgba(50,50,50,0.8);
+            border-color: #87CEEB;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(135,206,235,0.3);
+        }
+        .contact-btn:active {
+            transform: translateY(0);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 90%;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.9),
+                0 0 0 1px rgba(255,255,255,0.08);
+            position: relative;
+            animation: modalFadeIn 0.4s ease;
+            margin: 50px auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 15px 15px;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #cccccc;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #333333;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .close-btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: rotate(90deg);
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .modal-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 5px solid #ffffff;
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2), inset 0 0 0 1px rgba(255,255,255,0.1);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .modal-name {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #e0e0e0, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            -webkit-text-stroke: 0.5px rgba(255,255,255,0.2);
+        }
+        .modal-desc {
+            font-family: "SimSun", "宋体", serif;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 2.2;
+            color: #f8f8f8;
+            text-align: left;
+            padding: 25px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 6px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255,255,255,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        .typing-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(42,42,42,1) 0%, 
+                rgba(42,42,42,0.98) 5%, 
+                rgba(42,42,42,0) 100%);
+            z-index: 1;
+            animation: typingEffect 3s linear forwards;
+        }
+        @keyframes typingEffect {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .player-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #111111, #222222, #111111);
+            border-top: 2px solid #87CEEB;
+            padding: 15px;
+            z-index: 9998;
+            box-shadow: 0 -8px 20px rgba(0,0,0,0.8);
+        }
+        .audio-player {
+            width: 100%;
+            margin-bottom: 10px;
+            outline: none;
+            background: rgba(30,30,30,0.8);
+            border-radius: 8px;
+            padding: 5px;
+            border: 1px solid rgba(135,206,235,0.2);
+        }
+        .glass-player-btns {
+            position: fixed;
+            right: 20px;
+            bottom: 120px;
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(20,20,20,0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(135,206,235,0.3);
+            border-radius: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+        }
+        .glass-player-btn {
+            padding: 12px 16px;
+            background: rgba(30,30,30,0.7);
+            color: #87CEEB;
+            border: 1px solid rgba(135,206,235,0.4);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .glass-player-btn:hover {
+            background: rgba(50,50,50,0.8);
+            border-color: #87CEEB;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 10px rgba(135,206,235,0.3);
+        }
+        .glass-player-btn:active {
+            transform: translateY(0);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .arrow-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .splash-title { font-size: 3.2rem; letter-spacing: 0.1em; white-space: normal; }
+            .splash-sub { font-size: 2rem; }
+            .splash-arrow { font-size: 3rem; }
+            .header h1 { font-size: 40px; letter-spacing: 8px; }
+            .section-title { font-size: 28px; letter-spacing: 6px; }
+            .story-btn { font-size: 18px; padding: 12px 24px; }
+            .carousel-container { max-width: 90%; margin: 0 auto 30px auto; }
+            .record-carousel-container { max-width: 90%; margin: 0 auto 30px auto; }
+            .video-container { grid-template-columns: 1fr; padding: 0 10px; }
+            .member-container { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+            .avatar { width: 70px; height: 70px; }
+            .member-name { font-size: 18px; }
+            .modal-desc { font-size: 20px; line-height: 2.1; padding: 20px; }
+            .glass-player-btn { font-size: 12px; padding: 10px 14px; }
+            .contact-btn { font-size: 13px; padding: 7px 14px; }
+        }
+        @media (max-width: 480px) {
+            .member-card { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 20px; 
+                gap: 15px;
+            }
+            .member-left {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .header { padding: 30px 0; }
+            .header h1 { font-size: 32px; letter-spacing: 6px; }
+            .section-title { font-size: 24px; letter-spacing: 4px; }
+            .story-btn { font-size: 16px; padding: 10px 20px; }
+            .splash-title { font-size: 2.5rem; }
+            .splash-sub { font-size: 1.6rem; }
+            .carousel-container { aspect-ratio: 16/9; }
+            .record-carousel-container { aspect-ratio: 16/9; }
+            .glass-player-btn { font-size: 11px; padding: 8px 12px; }
+            .glass-player-btns { gap: 8px; padding: 8px; right: 10px; }
+            .contact-btn { 
+                width: 100%; 
+                text-align: center; 
+                justify-content: center;
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+        @media (max-width: 400px) {
+            .glass-player-btns { bottom: 110px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-screen">
+        <div class="splash-title">欢迎来到空想</div>
+        <div class="splash-sub">喷系知名高手云集的一处净地</div>
+        <a href="#main-content" class="arrow-link splash-arrow" onclick="closeSplash(event)">
+            <i class="fas fa-arrow-circle-down"></i>
+        </a>
+    </div>
+    <div id="main-content">
+        <div class="header">
+            <h1>空想 ·强者如云</h1>
+        </div>
+        
+        <div class="story-player">
+            <button class="story-btn" id="story-btn">
+                <i class="fas fa-book-open"></i> 聆听空想起源故事
+            </button>
+            <audio id="story-audio" preload="metadata">
+                <source src="./空想故事.m4a" type="audio/mp4">
+            
+        </div>
+        
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <img src="./空想1.jpg" alt="空想1">
+                <img src="./空想2.jpg" alt="空想2">
+                <img src="./空想3.jpg" alt="空想3">
+                <img src="./空想4.jpg" alt="空想4">
+            </div>
+        </div>
+
+        <h2 class="section-title">维基战绩</h2>
+        <div class="record-carousel-container">
+            <div class="record-carousel" id="record-carousel">
+                <img src="./战绩1.jpg" alt="战绩1">
+                <img src="./战绩2.jpg" alt="战绩2">
+                <img src="./战绩3.jpg" alt="战绩3">
+                <img src="./战绩4.jpg" alt="战绩4">
+                <img src="./战绩5.jpg" alt="战绩5">
+                <img src="./战绩6.jpg" alt="战绩6">
+                <img src="./战绩7.jpg" alt="战绩7">
+            </div>
+        </div>
+
+        <div class="video-container">
+            <div class="video-card">
+                <h3>欢迎加入空想</h3>
+                <video controls preload="metadata" playsinline webkit-playsinline>
+                    <source src="./空想视频1.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+            <div class="video-card">
+                <h3>组织历史信息</h3>
+                <video controls preload="metadata" playsinline webkit-playsinline>
+                    <source src="./空想视频2.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+            </div>
+        </div>
+        <div class="member-container">
+            <div class="member-card" data-qq="1346369657" onclick="showModal('李世龙', '净土现任掌权人 净土老牌历任老大 欧盟董事会核心成员 空想帝国现任核心掌权者 身兼多方势力高位 资历深厚 执掌阵营大小事务', 'https://q1.qlogo.cn/g?b=qq&nk=1346369657&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=1346369657&s=640" alt="李世龙的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">李世龙</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=1346369657&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3031683087" onclick="showModal('小运', '黑水体系掌权 凌云十二策掌权 总黑水体系历代 东方神韵历代 神天之府历代 书中之院历代 天剑体系历代 玖色泉水历代 暗黑之河历代', 'https://q1.qlogo.cn/g?b=qq&nk=3031683087&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3031683087&s=640" alt="小运的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">小运</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3031683087&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3243323558" onclick="showModal('黑桃', '黑旗历代 空想历代 月俗历代 斩雪历代 神高层 红日高层 浩氏高层 喷府高层 万剑高层 天下第一剑女皇 对待朋友不错', 'https://q1.qlogo.cn/g?b=qq&nk=3243323558&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3243323558&s=640" alt="黑桃的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">黑桃</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3243323558&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="772788431" onclick="showModal('原野', '空想创始人 九重天的老大 带领空想走南闯北 是空想的主力军也是神风体系天师府青山神戴荒古老大', 'https://q1.qlogo.cn/g?b=qq&nk=772788431&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=772788431&s=640" alt="原野的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">原野</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=772788431&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3682161063" onclick="showModal('木木', '空想创始人 九重天历代 三魔历代 罪罚历代 长眠历代 救世历代 查档的神', 'https://q1.qlogo.cn/g?b=qq&nk=3682161063&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3682161063&s=640" alt="木木的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">木木</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3682161063&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="772788431" onclick="showModal('李胤', '神风 三清殿 凌霄 万国 等许多t1组织老大也是23年esu狗 精通各种技术 徒弟众多为人和善', 'https://q1.qlogo.cn/g?b=qq&nk=772788431&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=772788431&s=640" alt="李胤的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">李胤</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=772788431&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="328698171" onclick="showModal('小余', '神风体系and冰岛历代掌权人 实力强 也是黑乌鸦的忠实徒弟 手下人众多 esu能力强', 'https://q1.qlogo.cn/g?b=qq&nk=328698171&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=328698171&s=640" alt="小余的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">小余</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=328698171&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3640449575" onclick="showModal('江玲', '复活历代 荣光历代 罪罚历代 空想老大 等多个t1组织历代高层 身边数不清t0.5朋友 本人待人真诚 评价也好', 'https://q1.qlogo.cn/g?b=qq&nk=3640449575&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3640449575&s=640" alt="江玲的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">江玲</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3640449575&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3689364178" onclick="showModal('萌字忧心', '罪罚历代 空想历代 神风体系高层 拥有资深圈层资历历任核心高层参与组织发展与管理具备丰富圈层阅历', 'https://q1.qlogo.cn/g?b=qq&nk=3689364178&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3689364178&s=640" alt="萌字忧心的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">萌字忧心</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3689364178&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3842840631" onclick="showModal('白夜', '三魔管理吉祥物 吃瓜一线', 'https://q1.qlogo.cn/g?b=qq&nk=3842840631&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3842840631&s=640" alt="白夜的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">白夜</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3842840631&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3377529905" onclick="showModal('安妍', '三魔高层吉祥物 女星新t0.5', 'https://q1.qlogo.cn/g?b=qq&nk=3377529905&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3377529905&s=640" alt="安妍的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">安妍</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3377529905&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="1096083797" onclick="showModal('理查德', 'mc学校圈皇帝 自救剑修皇帝 targetcodesec团队创始人 网络安全高手 应用开发工程师 逆向大拿 人脉通天 各大组织技术部长 其师父为蛤蟆 新月技术部长 压迫感不寒而栗', 'https://q1.qlogo.cn/g?b=qq&nk=1096083797&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=1096083797&s=640" alt="理查德的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">理查德</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=1096083797&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="435535676" onclick="showModal('柳宗元', '手下多名手下败将 参与过黑体vs东鸢 管理过剑斩高层 目前在空想当吉祥物', 'https://q1.qlogo.cn/g?b=qq&nk=435535676&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=435535676&s=640" alt="柳宗元的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">柳宗元</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=435535676&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+            <div class="member-card" data-qq="3936981232" onclick="showModal('小岛', '管理过荣光 清天 中央盛世组织 参与过打场子扣字 现在扣字擅长意淫别人扣字骂人喜欢恶俗别人', 'https://q1.qlogo.cn/g?b=qq&nk=3936981232&s=640')">
+                <div class="member-left">
+                    <img src="https://q1.qlogo.cn/g?b=qq&nk=3936981232&s=640" alt="小岛的QQ头像" class="avatar">
+                    <div class="member-info">
+                        <div class="member-name">小岛</div>
+                    </div>
+                </div>
+                <a href="mqq://im/chat?chat_type=wpa&uin=3936981232&version=1&src_type=web&web_src=oicqzone.com" target="_blank" class="contact-btn" onclick="event.stopPropagation()">
+                    <i class="fas fa-comment-dots"></i> 联系
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalAvatar" class="modal-avatar" src="" alt="">
+            <h2 id="modalName" class="modal-name"></h2>
+            <div id="modalDescContainer" class="modal-desc">
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+    <div class="player-footer">
+        <audio id="audio-player" class="audio-player" controls preload="metadata">
+            <source src="" type="audio/mp4">
+        
+    </div>
+    <div class="glass-player-btns">
+        <button class="glass-player-btn" id="prev-btn">⬅️上</button>
+        <button class="glass-player-btn" id="pause-btn">⏸暂停</button>
+        <button class="glass-player-btn" id="stop-btn">⏹停止</button>
+        <button class="glass-player-btn" id="random-btn">随机</button>
+        <button class="glass-player-btn" id="next-btn">➡️下</button>
+    </div>
+    <script>
+        function closeSplash(event) {
+            event.preventDefault();
+            const splash = document.querySelector('.splash-screen');
+            splash.style.animation = 'none';
+            splash.style.opacity = '0';
+            splash.style.visibility = 'hidden';
+            document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+        }
+        function showModal(name, desc, avatarSrc) {
+            const modal = document.getElementById('memberModal');
+            const modalAvatar = document.getElementById('modalAvatar');
+            const modalName = document.getElementById('modalName');
+            const modalDesc = document.getElementById('modalDesc');
+            const modalDescContainer = document.getElementById('modalDescContainer');
+            const oldMask = document.querySelector('.typing-mask');
+            if (oldMask) oldMask.remove();
+            modalAvatar.src = avatarSrc;
+            modalName.textContent = name;
+            modalDesc.textContent = desc;
+            const typingMask = document.createElement('div');
+            typingMask.className = 'typing-mask';
+            modalDescContainer.appendChild(typingMask);
+            modal.style.display = 'flex';
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            }
+        }
+        function closeModal() {
+            const modal = document.getElementById('memberModal');
+            modal.style.display = 'none';
+            const typingMask = document.querySelector('.typing-mask');
+            if (typingMask) typingMask.remove();
+        }
+        const avatarCache = new Map();
+        const CHECK_INTERVAL = 30000;
+        function initAvatarCache() {
+            const avatars = document.querySelectorAll('.avatar');
+            avatars.forEach(avatar => {
+                const qq = avatar.closest('.member-card').dataset.qq;
+                avatarCache.set(qq, avatar.src);
+            });
+        }
+        async function checkAndUpdateAvatars() {
+            try {
+                const cards = document.querySelectorAll('.member-card');
+                for (const card of cards) {
+                    const qq = card.dataset.qq;
+                    const avatar = card.querySelector('.avatar');
+                    const newAvatarUrl = `https://q1.qlogo.cn/g?b=qq&nk=${qq}&s=640&t=${new Date().getTime()}`;
+                    const tempImg = new Image();
+                    tempImg.src = newAvatarUrl;
+                    tempImg.onload = function() {
+                        if (avatarCache.get(qq) !== newAvatarUrl) {
+                            avatar.style.opacity = '0';
+                            setTimeout(() => {
+                                avatar.src = newAvatarUrl;
+                                avatarCache.set(qq, newAvatarUrl);
+                                setTimeout(() => { avatar.style.opacity = '1'; }, 100);
+                                const modalAvatar = document.getElementById('modalAvatar');
+                                if (modalAvatar.src.includes(qq)) {
+                                    modalAvatar.src = newAvatarUrl;
+                                }
+                            }, 300);
+                        }
+                    };
+                }
+            } catch (error) {
+                console.warn('头像检测出错', error);
+            }
+        }
+        const carousel = document.getElementById('carousel');
+        const imgCount = 3;
+        let currentIndex = 0;
+        let timer = null;
+        let startX = 0;
+        let moveX = 0;
+        let isMoving = false;
+        function startAutoPlay() {
+            timer = setInterval(() => {
+                currentIndex++;
+                updateCarousel();
+            }, 3000);
+        }
+        function updateCarousel() {
+            if(currentIndex > imgCount){
+                carousel.style.transition = 'none';
+                currentIndex = 0;
+                carousel.style.transform = `translateX(-${currentIndex * 25}%)`;
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease';
+                    currentIndex = 1;
+                    updateCarousel();
+                }, 10);
+                return;
+            }
+            carousel.style.transform = `translateX(-${currentIndex * 25}%)`;
+        }
+        function stopAutoPlay() {
+            clearInterval(timer);
+        }
+        carousel.addEventListener('touchstart', (e) => {
+            stopAutoPlay();
+            isMoving = true;
+            startX = e.touches[0].clientX;
+        });
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isMoving) return;
+            moveX = e.touches[0].clientX - startX;
+        });
+        carousel.addEventListener('touchend', () => {
+            isMoving = false;
+            if (moveX > 50) {
+                currentIndex--;
+            } else if (moveX < -50) {
+                currentIndex++;
+            }
+            if(currentIndex < 0) currentIndex = 0;
+            if(currentIndex > imgCount) currentIndex = imgCount;
+            updateCarousel();
+            startAutoPlay();
+        });
+
+        const recordCarousel = document.getElementById('record-carousel');
+        const recordImgCount = 6;
+        let recordCurrentIndex = 0;
+        let recordTimer = null;
+        let recordStartX = 0;
+        let recordMoveX = 0;
+        let recordIsMoving = false;
+        function startRecordAutoPlay() {
+            recordTimer = setInterval(() => {
+                recordCurrentIndex++;
+                updateRecordCarousel();
+            }, 3500);
+        }
+        function updateRecordCarousel() {
+            if(recordCurrentIndex > recordImgCount){
+                recordCarousel.style.transition = 'none';
+                recordCurrentIndex = 0;
+                recordCarousel.style.transform = `translateX(-${recordCurrentIndex * 14.2857}%)`;
+                setTimeout(() => {
+                    recordCarousel.style.transition = 'transform 0.5s ease';
+                    recordCurrentIndex = 1;
+                    updateRecordCarousel();
+                }, 10);
+                return;
+            }
+            recordCarousel.style.transform = `translateX(-${recordCurrentIndex * 14.2857}%)`;
+        }
+        function stopRecordAutoPlay() {
+            clearInterval(recordTimer);
+        }
+        recordCarousel.addEventListener('touchstart', (e) => {
+            stopRecordAutoPlay();
+            recordIsMoving = true;
+            recordStartX = e.touches[0].clientX;
+        });
+        recordCarousel.addEventListener('touchmove', (e) => {
+            if (!recordIsMoving) return;
+            recordMoveX = e.touches[0].clientX - recordStartX;
+        });
+        recordCarousel.addEventListener('touchend', () => {
+            recordIsMoving = false;
+            if (recordMoveX > 50) {
+                recordCurrentIndex--;
+            } else if (recordMoveX < -50) {
+                recordCurrentIndex++;
+            }
+            if(recordCurrentIndex < 0) recordCurrentIndex = 0;
+            if(recordCurrentIndex > recordImgCount) recordCurrentIndex = recordImgCount;
+            updateRecordCarousel();
+            startRecordAutoPlay();
+        });
+
+        const storyBtn = document.getElementById('story-btn');
+        const storyAudio = document.getElementById('story-audio');
+        storyBtn.addEventListener('click', () => {
+            if (storyAudio.paused) {
+                storyAudio.play();
+                storyBtn.classList.add('playing');
+                storyBtn.innerHTML = '<i class="fas fa-pause"></i> 暂停播放故事';
+            } else {
+                storyAudio.pause();
+                storyBtn.classList.remove('playing');
+                storyBtn.innerHTML = '<i class="fas fa-book-open"></i> 聆听空想起源故事';
+            }
+        });
+        storyAudio.addEventListener('ended', () => {
+            storyBtn.classList.remove('playing');
+            storyBtn.innerHTML = '<i class="fas fa-book-open"></i> 聆听空想起源故事';
+        });
+        const audioPlayer = document.getElementById('audio-player');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const randomBtn = document.getElementById('random-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const songs = [
+            './NASA.m4a',
+            './关中王.m4a',
+            './F1赛车.m4a',
+            './一路向北.m4a',
+            './借过.m4a',
+            './嗜好.m4a',
+            './带我走.m4a',
+            './海屿你.m4a',
+            './虚拟.m4a',
+            './说谎.m4a',
+            './走马.m4a',
+            './陪你看星星.m4a'
+        ];
+        let currentSongIndex = 0;
+        function loadSong(index) {
+            audioPlayer.querySelector('source').src = songs[index];
+            audioPlayer.load();
+            audioPlayer.play().catch(err => {});
+        }
+        prevBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(currentSongIndex);
+        });
+        nextBtn.addEventListener('click', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+        });
+        randomBtn.addEventListener('click', () => {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * songs.length);
+            } while (randomIndex === currentSongIndex && songs.length > 1);
+            currentSongIndex = randomIndex;
+            loadSong(currentSongIndex);
+        });
+        pauseBtn.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                pauseBtn.textContent = '⏸暂停';
+            } else {
+                audioPlayer.pause();
+                pauseBtn.textContent = '▶️播放';
+            }
+        });
+        stopBtn.addEventListener('click', () => {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            pauseBtn.textContent = '⏸暂停';
+        });
+        audioPlayer.addEventListener('ended', () => {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            initAvatarCache();
+            checkAndUpdateAvatars();
+            setInterval(checkAndUpdateAvatars, CHECK_INTERVAL);
+            document.querySelectorAll('.avatar').forEach(avatar => {
+                avatar.onerror = function() {
+                    this.style.backgroundColor = '#333333';
+                    this.style.display = 'flex';
+                    this.style.justifyContent = 'center';
+                    this.style.alignItems = 'center';
+                    this.style.color = '#ffffff';
+                    this.textContent = this.alt.substring(0, 2);
+                    this.style.fontSize = '20px';
+                }
+            });
+            startAutoPlay();
+            startRecordAutoPlay();
+            loadSong(currentSongIndex);
+        });
+    </script>
+</body>
+</html>
